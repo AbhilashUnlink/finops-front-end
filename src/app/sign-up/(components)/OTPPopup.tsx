@@ -1,22 +1,61 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-'use client'
-import { Input } from 'antd'
-import React from 'react'
+"use client";
+import { tenantsResendOtp } from "@/store/features/auth/authSlice";
+import { useAppDispatch } from "@/store/hooks";
+import { CustomButton } from "@/ui/custom-button/CustomButton";
+import { Input } from "antd";
+import React, { useState } from "react";
 
-const OTPPopup = () => {
-    const onChange = (text: any) => {
-        console.log('onChange:', text);
-    };
+const OTPPopup = ({
+  setPopup,
+  email,
+  submitText = "Set New Password",
+  onSubmit,
+  loading,
+}: any) => {
+  const dispatch = useAppDispatch();
 
-    return (
-        <div className='w-full h-40 flex flex-col gap-4'>
-            <span className='text-lg font-medium mt-10'>
+  const onChange = (text: any) => {
+    setPopup((prev: any) => {
+      return { ...prev, otp: text };
+    });
+  };
+  const [resendLoading, setResendLoading] = useState(false);
 
-                {/* PLEASE ENTER THE OTP SENT TO YOUR EMAIL */}
-            </span>
-            <Input.OTP {...{ onChange }} />
-        </div>
-    )
-}
+  const handleresendOtp = () => {
+    setResendLoading(true);
+    dispatch(tenantsResendOtp({ email })).then((res: any) => {
+      setResendLoading(false);
+      if ([201].includes(res.payload.statusCode)) {
+        // res.payload.message.success('OTP resent successfully');
+      } else {
+        // res.payload.message.error('Failed to resend OTP');
+      }
+    });
+  };
+  return (
+    <div className='w-full flex flex-col gap-4'>
 
-export default OTPPopup
+      <Input.OTP {...{ onChange }} />
+
+
+
+
+      <div className='flex flex-row mt-5 gap-5 justify-center items-center'>
+        <CustomButton
+          type='primary1'
+          loading={resendLoading}
+          onClick={handleresendOtp}
+        >
+          {" "}
+          Resend OTP{" "}
+        </CustomButton>
+        <CustomButton type='primary1' onClick={onSubmit} loading={loading}>
+          {submitText}
+        </CustomButton>
+      </div>
+    </div>
+  );
+};
+
+export default OTPPopup;
