@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-top: 1.25rem;
 }
 
 /* Base link style */
@@ -11,7 +10,6 @@
     display: flex;
     height: 48px;
     align-items: center;
-    justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem;
     font-size: 0.875rem;
@@ -64,10 +62,9 @@
 .sideNavContent {
     display: flex;
     flex-grow: 1;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     gap: 0.5rem;
-    padding: 1rem;
 }
 
 .sideNavContentMobile {
@@ -82,23 +79,18 @@
 .signOutButton {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 0.5rem;
     background-color: #4b5563;
-    /* bg-gray-700 */
     color: white;
     padding: 0.75rem;
-    font-size: 0.875rem;
-    /* text-sm */
+    font-size: 0.8rem;
     font-weight: 500;
-    /* font-medium */
     width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .signOutButtonHover:hover {
     background-color: #cbe8f5;
-    /* hover:bg-sky-100 */
     color: var(--customColors-protected-background);
 }
 
@@ -108,5 +100,4 @@
 
 .signOutButtonIcon {
     width: 1.5rem;
-    /* w-6 */
 }

@@ -5,7 +5,6 @@ import CustomTable from '@/ui/custom-table/CustomTable';
 
 const PipelinesTable = () => {
     const dataSource: any = [
-
         {
             key: '1',
             NAME: 'ABHILASH',
@@ -45,9 +44,9 @@ const PipelinesTable = () => {
             width: 300,
             render: (cell: any) => {
                 return (<>
-                    <button className='bg-red-400 px-5 py-1 mr-4' onClick={() => alert(`hello ${cell.toUpperCase()}`)}>
+                    {/* <button className='bg-red-400 px-5 py-1 mr-4' onClick={() => alert(`hello ${cell.toUpperCase()}`)}>
                         Say hello
-                    </button>
+                    </button> */}
                     {cell.toUpperCase()}
                 </>)
             }
