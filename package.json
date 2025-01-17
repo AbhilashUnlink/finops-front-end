@@ -13,6 +13,7 @@
     "@ant-design/icons": "5.3.7",
     "@ant-design/nextjs-registry": "^1.0.2",
     "@reduxjs/toolkit": "^2.5.0",
+    "@types/react-resizable": "^3.0.8",
     "antd": "^5.23.1",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
@@ -20,6 +21,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-redux": "^9.2.0",
+    "react-resizable": "^3.0.5",
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0"
   },
