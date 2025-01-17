@@ -5,7 +5,7 @@ export const API_ROUTES = {
     FORGET_PASSWORD:`users/forget-password`,         // forget password api on login page
     EMAIL_EXISTS:`users/email-exists`,               // Check for exist user based on email on Register page (Request --> Email value from registration details page)
     INDUSTRY_TYPE:'industries/list',                 // Industry Dropdown list on Register page (Request -->empty request)
-    USER_OTP_VERIFY:'users/verify-otp',              // verify OTP API come (Request -->UUID,OTP)
+    USER_OTP_VERIFY:'users/verify-otp',              // verify OTP API come (Request -->EMAIL,OTP)
     INDUSTRY_LOCATION:`locations/list`,              // Industry location on Register page (Request -->empty request)
     TENANTS_RESEND_OTP:`tenants/resend-otp`,         // API for tenants Resend otp when tenants send otp again (Request -->email)
     VERIFY_EMAIL_OTP:`users/verify-email-otp`,       // API to verify email that entered after user forgot password

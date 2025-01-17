@@ -146,7 +146,7 @@ export const emailExists = createAsyncThunk(
 // =============== Thunk: REGISTER USER OTP VERIFY  ===============
 export const userOtpVerify = createAsyncThunk(
   "auth/userOtpVerify",
-  async (payload: { otp: number; uuid: string }) => {
+  async (payload: { otp: number; email: string }) => {
     try {
       const response = await usreOtpVerifyService(payload);
      
