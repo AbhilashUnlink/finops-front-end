@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { Form, Input } from 'antd';
 
@@ -16,7 +15,8 @@ const DasAntdInput = ({
   disabled = false,
   disableInputFields,
   addonAfter,
-  hide = false
+  hide = false,
+  addonBefore,
 }: any) => {
   let appliedRules = rules ? rules : [];
   if (!required) {
@@ -33,15 +33,14 @@ const DasAntdInput = ({
           rules={appliedRules}
           hasFeedback={hasFeedback}
           tooltip={tooltip}
-
         >
           <Input
-            size="small"
             defaultValue={defaultValue}
             placeholder={placeholder}
             readOnly={readOnly}
             disabled={disabled || disableInputFields}
             addonAfter={addonAfter}
+            addonBefore={addonBefore}
           />
         </Form.Item>
       </div>

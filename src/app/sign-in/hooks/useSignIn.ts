@@ -1,27 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
-// import { usersSignIn } from "@/app/store/features/auth/authSlice";
-// import { useAppDispatch } from "@/app/store/hooks";
-// import { useRouter } from "next/navigation";
+import { usersSignIn } from "@/store/features/auth/authSlice";
+import { useAppDispatch } from "@/store/hooks";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 
 export const useSignIn = () => {
 
-  // const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   const [formData, setFormData] = useState<any>({
     email: "",
     password: "",
   });
-  // const router = useRouter();
+  const router = useRouter();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // await dispatch(usersSignIn(formData)).then((res: any) => {
-      //   if ([201].includes(res.payload.statusCode)) {
-      //     router.push("/pipelines");
-      //   }
-      // })
+      await dispatch(usersSignIn(formData)).then((res: any) => {
+        if ([201].includes(res.payload.statusCode)) {
+          router.push("/pipelines");
+        }
+      })
     } catch (error) {
       console.error("Sign in failed:", error);
     }

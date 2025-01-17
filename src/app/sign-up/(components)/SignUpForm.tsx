@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import React, { useEffect, useState } from 'react'
-// import { useAppDispatch, useAppSelector } from '../store/hooks';
 import Image from 'next/image';
 import { Form } from 'antd';
 import AntdModal from '@/ui/popup/AntdModal';
@@ -10,20 +9,22 @@ import DasAntdCheckbox from '@/ui/form/antd-form-fields/DasAntdCheckbox';
 import OTPPopup from './OTPPopup';
 import RegistrationPasswordPopup from './RegistrationPasswordPopup';
 import LOGO from "../../../assets/logo.png"
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { industryLocation, industryType } from '@/store/features/utilities/utilitySlice';
 
 const SignUpForm = () => {
-    // const dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         try {
-            // dispatch(industryType());
-            // dispatch(industryLocation());
+            dispatch(industryType());
+            dispatch(industryLocation());
         } catch (e) {
             console.log("error while fetching industries  ", e);
         }
     }, []);
 
-    // const { list, location } = useAppSelector((state) => state.utilities);
+    const { list, location } = useAppSelector((state) => state.utilities);
 
 
     const width = "w-[49%]";
@@ -70,16 +71,16 @@ const SignUpForm = () => {
             label: "Business Location",
             type: "select",
             placeholder: "Enter Business Location",
-            // select: true,
-            // options: location,
+            select: true,
+            options: location,
             className: width
         },
         {
             "name": "company_type",
             "label": "Industry",
             placeholder: "Enter Industry Type",
-            // select: true,
-            // options: list,
+            select: true,
+            options: list,
             className: width
         },
     ];
