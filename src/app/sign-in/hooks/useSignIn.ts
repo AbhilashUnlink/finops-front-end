@@ -14,10 +14,17 @@ export const useSignIn = () => {
     password: "",
   });
   const router = useRouter();
-  const handleSubmit = async (e: React.FormEvent) => {
+
+
+
+
+
+  const handleSubmit = async (e: React.FormEvent,setLoading:any) => {
     e.preventDefault();
     try {
+      setLoading(true)
       await dispatch(usersSignIn(formData)).then((res: any) => {
+        setLoading(false)
         if ([201].includes(res.payload.statusCode)) {
           router.push("/pipelines");
         }
