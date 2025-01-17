@@ -1,0 +1,103 @@
+/* Container for the links */
+.navItemsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Base link style */
+.navLink {
+    display: flex;
+    height: 48px;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    /* text-sm */
+    font-weight: 500;
+    /* font-medium */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.navLinkHover:hover {
+    background-color: #e2e8f0;
+    /* hover:bg-gray-300 */
+    color: var(--customColors-darkBlue-800);
+}
+
+/* Active link (current pathname) */
+.navLinkActive {
+    color: #1054D5;
+    background-color: #e2e8f0;
+    /* bg-gray-300 */
+}
+
+/* Text color */
+.navLinkText {
+    color: var(--customColors-darkBlue-800);
+}
+
+/* Icon size */
+.navLinkIcon {
+    width: 1.5rem;
+    /* w-6 */
+}
+
+/* Text for links when sidebar is not collapsed */
+.navLinkTextExpanded {
+    display: inline;
+}
+
+/* Base container for the sidebar */
+.sideNavContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--customColors-protected-background);
+}
+
+/* Layout for the content inside the sidebar */
+.sideNavContent {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.sideNavContentMobile {
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.navItemsContainer {
+    flex-grow: 1;
+}
+
+.signOutButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #4b5563;
+    color: white;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signOutButtonHover:hover {
+    background-color: #cbe8f5;
+    color: var(--customColors-protected-background);
+}
+
+.signOutText {
+    display: flex;
+}
+
+.signOutButtonIcon {
+    width: 1.5rem;
+}

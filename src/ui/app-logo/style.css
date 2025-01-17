@@ -1,0 +1,33 @@
+.logo-container {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--customColors-darkBlue-800);
+}
+
+.logoLink {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logoText {
+    font-size: 22px;
+}
+
+.iconContainer {
+    cursor: pointer;
+}
+
+.iconExpanded {
+    font-size: 30px;
+}
+
+.iconCollapsed {
+    font-size: 14px;
+}
