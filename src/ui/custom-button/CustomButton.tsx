@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { LoadingOutlined } from '@ant-design/icons';
 import { Spin } from 'antd';
 import clsx from 'clsx';
@@ -7,11 +8,10 @@ interface ButtonProps {
     children: React.ReactNode;
     type?: 'primary' | 'secondary' | 'danger' |'primary1';  // Add the 'type' prop for different button styles
     className?: string;
-    [key:string]:any,
-    handleOk?:any
+    [key:string]:any
 }
 
-export function CustomButton({ children, className, type,loading , handleOk,...rest }: ButtonProps) {
+export function CustomButton({ children, className, type,loading ,...rest }: ButtonProps) {
     let buttonClasses = '';
 
     // Use a switch case to decide the button style based on the 'type' prop

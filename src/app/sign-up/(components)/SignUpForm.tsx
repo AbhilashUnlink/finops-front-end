@@ -22,7 +22,7 @@ const SignUpForm = () => {
         } catch (e) {
             console.log("error while fetching industries  ", e);
         }
-    }, []);
+    }, [dispatch]);
 
     const { list, location } = useAppSelector((state) => state.utilities);
 
