@@ -8,7 +8,7 @@ import {
 const DasAntdSelect = ({
   name,
   label,
-  // rules,
+  rules,
   className = '',
   showSearch = true,
   options = [],
@@ -28,8 +28,8 @@ const DasAntdSelect = ({
   return (
     <div className={className}>
       <Form.Item name={name} label={label}
-        // required={true}
-        // rules={rules ? rules : formRuleValidation(t(label))}
+         required={true}
+         rules={rules}
         hasFeedback={mode === "multiple" ? false : true}
       >
         <Select
