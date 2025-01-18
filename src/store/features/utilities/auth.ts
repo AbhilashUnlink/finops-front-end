@@ -43,8 +43,8 @@ export async function saveEmailService(payload: any) {
   return makeApiCall<SaveEmailResponse>(API_ROUTES.SAVE_EMAIL, 'POST', payload);
 }
 //=============== ForgotPassword API call on Login Page ==============//
-    export async function forgetPasswordService(payload: any) {
-      return makeApiCall<any>( API_ROUTES.FORGET_PASSWORD,'POST', payload);
+    export async function forgotPasswordService(payload:string) {
+      return makeApiCall<any>( `${API_ROUTES.FORGOT_PASSWORD}/${payload}`,'POST');
     }
 // ============== Email Validation API on Registration Page ==============//    
     export async function emailExistsService(payload:string){

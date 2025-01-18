@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 'use client'
-import { tenantsResendOtp } from '@/store/features/auth/authSlice'
+import { forgotPassword, tenantsResendOtp } from '@/store/features/auth/authSlice'
 import { useAppDispatch } from '@/store/hooks'
 import { CustomButton } from '@/ui/custom-button/CustomButton'
 
@@ -50,10 +50,12 @@ const EmailPopup = ({popup,setPopup}:any) => {
     type='primary'
     loading={loading?.resendOtp}
     onClick={()=>{
-      console.log(popup?.email);
+    
+       const email=popup?.email
+    
       
       startLoading("resendOtp")
-      dispatch(tenantsResendOtp(popup?.email)).then(()=>{
+      dispatch(forgotPassword(email)).then(()=>{
         setPopup((prev:any)=>{
           return {...prev,type:"otp",title:"Please Enter OTP Sent on Email"}
         })
