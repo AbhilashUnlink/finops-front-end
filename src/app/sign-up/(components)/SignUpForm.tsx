@@ -141,7 +141,7 @@ const SignUpForm = () => {
               buttonText={"Register User"}
               loading={loading?.tenantCreate || false}
               onClick={() => {
-                let payload: any = {
+                const payload: any = {
                   ...formData,
                   terms_conditions: formData?.terms_conditions,
                   tenant_description: "Hills Top",
@@ -157,7 +157,7 @@ const SignUpForm = () => {
                 };
                 delete payload["terms_conditions"];
                 startLoading("tenantCreate");
-                dispatch(tenantsCreate(payload)).then((res: any) => {
+                dispatch(tenantsCreate(payload)).then(() => {
                   stopAllLoaders();
                   setPopup((prev) => {
                     return { ...prev, open: false };

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 'use client'
-import { forgotPassword, tenantsResendOtp } from '@/store/features/auth/authSlice'
+import { forgotPassword } from '@/store/features/auth/authSlice'
 import { useAppDispatch } from '@/store/hooks'
 import { CustomButton } from '@/ui/custom-button/CustomButton'
 
