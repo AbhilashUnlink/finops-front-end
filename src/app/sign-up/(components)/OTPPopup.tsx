@@ -35,21 +35,21 @@ const OTPPopup = ({
   };
   return (
     <div className='w-full flex flex-col gap-4'>
+      <div className="mt-8 flex flex-row justify-around w-full ">
+        <Input.OTP size={"large"} {...{ onChange }} />
+      </div>
 
-      <Input.OTP {...{ onChange }} />
+      <div className='flex flex-col mt-5 gap-5 justify-center items-center'>
 
-
-
-
-      <div className='flex flex-row mt-5 gap-5 justify-center items-center'>
         <CustomButton
-          type='primary1'
+          type='primary2'
           loading={resendLoading}
           onClick={handleresendOtp}
         >
           {" "}
           Resend OTP{" "}
         </CustomButton>
+
         <CustomButton type='primary1' onClick={onSubmit} loading={loading}>
           {submitText}
         </CustomButton>

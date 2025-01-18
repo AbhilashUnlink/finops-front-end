@@ -74,6 +74,18 @@
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
 }
 
+.primary2-button {
+  color: #061A28;
+  border: none;
+  width: fit-content;
+  padding: 0px 20px;
+}
+
+.primary2-button:hover {
+  border: 1px solid#061A28;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
+}
+
 .primary1-button:hover {
   background-color: #1e40af;
 }

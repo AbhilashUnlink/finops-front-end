@@ -69,7 +69,7 @@ const SignInForm = () => {
           <>
             <RegistrationPasswordPopup
               setFormData={setPopup}
-              onClick={() => {}}
+              onClick={() => { }}
             />
           </>
         )}
@@ -111,20 +111,21 @@ const SignInForm = () => {
           </button>
         </div>
         <div className='flex gap-5 justify-between mt-7 w-full tracking-normal'>
-     
+
 
           <Button
-               onClick={()=>{
-                setPopup((prev) => {
-                return { ...prev, type: "email",open:true, title: "PLEASE ENTER YOUR EMAIL" };
-              })}}
-                className='text-right text-blue-600 hover:text-blue-700 underline bg-transparent p-0 border-0 cursor-pointer outline-0'
-              >
-                Forgot Password?
-                
-              </Button>
+            onClick={() => {
+              setPopup((prev) => {
+                return { ...prev, type: "email", open: true, title: "PLEASE ENTER YOUR EMAIL" };
+              })
+            }}
+            className='text-right text-blue-600 hover:text-blue-700 underline bg-transparent p-0 border-0 cursor-pointer outline-0'
+          >
+            Forgot Password ?
+
+          </Button>
         </div>
-        <CustomButton type='primary' loading={loading}>
+        <CustomButton className="mt-6" type='primary' loading={loading}>
           Sign In
         </CustomButton>
       </form>

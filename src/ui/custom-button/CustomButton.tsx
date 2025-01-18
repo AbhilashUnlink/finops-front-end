@@ -8,7 +8,7 @@ import './style.css'; // Import the external stylesheet
 interface ButtonProps {
   loading?: boolean;
   children: React.ReactNode;
-  type?: 'primary' | 'secondary' | 'danger' | 'primary1'; // Button styles
+  type?: 'primary' | 'secondary' | 'danger' | 'primary1' | 'primary2'; // Button styles
   className?: string;
   [key: string]: any; // Allow additional props
 }
@@ -21,6 +21,7 @@ export function CustomButton({ children, className, type, loading, ...rest }: Bu
       'secondary-button': type === 'secondary',
       'danger-button': type === 'danger',
       'primary1-button': type === 'primary1',
+      'primary2-button': type === 'primary2',
     },
     className
   );
