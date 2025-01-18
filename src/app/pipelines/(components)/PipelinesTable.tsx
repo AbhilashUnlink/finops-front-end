@@ -2,6 +2,7 @@
 'use client'
 import React from 'react';
 import CustomTable from '@/ui/custom-table/CustomTable';
+import PipelinesHeader from './PipelinesHeader';
 
 const PipelinesTable = () => {
     const dataSource: any = [
@@ -131,10 +132,13 @@ const PipelinesTable = () => {
     ];
     return (
         <div>
-            <CustomTable
-                cols={cols}
-                dataSource={dataSource}
-            />
+            <PipelinesHeader />
+            <div className='mt-2'>
+                <CustomTable
+                    cols={cols}
+                    dataSource={dataSource}
+                />
+            </div>
         </div>
     )
 }
