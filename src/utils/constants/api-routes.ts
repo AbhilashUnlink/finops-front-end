@@ -2,7 +2,7 @@ export const API_ROUTES = {
     USERS_SIGNIN:`users/signin`,                     // tenant Signin API                           
     TENANT_CREATE:`tenants/create`,                  // After otp verify tenants/first-time user migrate to create tenants page (Request --> Registration form details,New Password)
     SAVE_EMAIL: `tenants/save-email`,                // When tenants come first time save email api run to save email data (Request --> only nonexisted Email)
-    FORGET_PASSWORD:`users/forget-password`,         // forget password api on login page
+    FORGOT_PASSWORD:`users/forgot-password`,         // forget password api on login page
     EMAIL_EXISTS:`users/email-exists`,               // Check for exist user based on email on Register page (Request --> Email value from registration details page)
     INDUSTRY_TYPE:'industries/list',                 // Industry Dropdown list on Register page (Request -->empty request)
     USER_OTP_VERIFY:'users/verify-otp',              // verify OTP API come (Request -->EMAIL,OTP)

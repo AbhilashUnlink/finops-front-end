@@ -1,7 +1,7 @@
 // features/auth/authSlice.ts
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { emailExistsService, forgetPasswordService, saveEmailService, setPasswordService, tenantsCreateService, tenantsResendOtpService, usersSignInService, usreOtpVerifyService, verifyEmailOtpService } from "../utilities/auth";
+import { emailExistsService,forgotPasswordService, saveEmailService, setPasswordService, tenantsCreateService, tenantsResendOtpService, usersSignInService, usreOtpVerifyService, verifyEmailOtpService } from "../utilities/auth";
 // import {
 //   saveEmailService,
 //   emailExistsService,
@@ -159,11 +159,11 @@ export const userOtpVerify = createAsyncThunk(
 );
 
 // =============== Thunk: FORGOT PASSWORD ===============
-export const forgetPassword = createAsyncThunk(
-  "auth/forgetPassword",
+export const forgotPassword = createAsyncThunk(
+  "auth/forgotPassword",
   async (payload: any, { rejectWithValue }) => {
     try {
-      const response = await forgetPasswordService(payload);
+      const response = await forgotPasswordService(payload);
      
       return response;
     } catch (error: any) {
@@ -333,15 +333,15 @@ const authSlice = createSlice({
 
 
     // =============== FORGOT PASSWORD HANDLERS ===============
-    builder.addCase(forgetPassword.pending, (state) => {
+    builder.addCase(forgotPassword.pending, (state) => {
       state.loading = true;
       state.error = null;
     });
-    builder.addCase(forgetPassword.fulfilled, (state) => {
+    builder.addCase(forgotPassword.fulfilled, (state) => {
       // On success, you might set a success message in Redux or just do nothing:
       state.loading = false;
     });
-    builder.addCase(forgetPassword.rejected, (state, action) => {
+    builder.addCase(forgotPassword.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload as string;
     });
